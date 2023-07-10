@@ -42,8 +42,10 @@ while running:
         clearInteract()
 
     screen.fill((0,0,0))
-    py.draw.circle(screen, function_circle_color, functions_circle, 10)
-    py.draw.rect(screen, function_square_color, functions_square)
+    for i in range(len(functions_circle)):
+        py.draw.circle(screen, function_circle_color[i], functions_circle[i][0:2], functions_circle[i][2])
+    for i in range(len(functions_square)):
+        py.draw.rect(screen, function_square_color[i], functions_square[i])
 
     # Click animation
     for i in range(len(_click_anim)-1, -1, -1):
